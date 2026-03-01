@@ -1,0 +1,156 @@
+/* Production of Samuel.M.K also know as T756-Tech */
+.main {
+    min-height: 100vh;
+    background-color: var(--bg-surface);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--bg-surface);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.logoIcon {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--accent-primary), #0044cc);
+    border-radius: 6px;
+}
+
+.article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 24px 120px;
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.breadcrumb a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.documentHeader {
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 16px 0;
+    letter-spacing: -0.03em;
+}
+
+.lastUpdated {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.documentContent {
+    color: var(--text-primary);
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.documentContent p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    color: var(--text-secondary);
+}
+
+.documentContent h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 48px 0 24px 0;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 12px;
+}
+
+.documentContent h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 32px 0 16px 0;
+    color: var(--text-primary);
+}
+
+.documentContent ul {
+    margin: 0 0 32px 0;
+    padding-left: 24px;
+    color: var(--text-secondary);
+}
+
+.documentContent li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.documentContent strong {
+    color: var(--text-primary);
+}
+
+.documentContent a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.documentContent a:hover {
+    text-decoration: underline;
+}
+
+.callout {
+    background-color: rgba(255, 68, 68, 0.1);
+    border-left: 4px solid #ff4444;
+    padding: 24px;
+    border-radius: 4px;
+    margin: 32px 0;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.callout strong {
+    color: #ff4444;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.125rem;
+}

@@ -1,0 +1,263 @@
+/* Production of Samuel.M.K also know as T756-Tech */
+.pricingSection {
+    padding: 120px 24px;
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 80px;
+}
+
+.badge {
+    display: inline-block;
+    color: var(--accent-primary);
+    background-color: rgba(8, 102, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 24px 0;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Pricing Grid (Stripe Table Style) */
+.pricingTableContainer {
+    overflow-x: auto;
+    padding-bottom: 24px;
+}
+
+.pricingGrid {
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr 1fr;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    background-color: var(--bg-base);
+    min-width: 900px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-light);
+    position: relative;
+}
+
+.column:last-child {
+    border-right: none;
+}
+
+.featureColumn {
+    background-color: var(--bg-surface);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.cellHeader {
+    padding: 40px 32px;
+    border-bottom: 1px solid var(--border-strong);
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.featureColumn .cellHeader {
+    height: 280px;
+    /* Align with others */
+}
+
+.cellHeader h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 16px 0;
+}
+
+.price {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.currency {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 8px;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.04em;
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    align-self: flex-end;
+    margin-bottom: 8px;
+    margin-left: 4px;
+}
+
+.customPrice {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.04em;
+    line-height: 1.2;
+}
+
+.planDesc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0 0 auto 0;
+    /* Pushes button to bottom */
+}
+
+.planBtn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    background-color: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    margin-top: 24px;
+}
+
+.planBtn:hover {
+    background-color: var(--bg-hover);
+}
+
+.primaryBtn {
+    background-color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    color: white;
+}
+
+.primaryBtn:hover {
+    background-color: var(--accent-hover);
+    color: white;
+}
+
+/* Rows */
+.cellRow {
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.featureColumn .cellRow {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.column .cellRow:last-child {
+    border-bottom: none;
+}
+
+.checkIcon {
+    color: var(--accent-primary);
+    font-weight: bold;
+}
+
+.xIcon {
+    color: var(--border-strong);
+}
+
+.popularColumn {
+    background-color: rgba(8, 102, 255, 0.02);
+}
+
+.popularBadge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.mobileLabel {
+    display: none;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+/* Responsive Stack */
+@media (max-width: 1024px) {
+    .pricingGrid {
+        display: flex;
+        flex-direction: column;
+        min-width: unset;
+        border: none;
+        background-color: transparent;
+        gap: 32px;
+    }
+
+    .featureColumn {
+        display: none;
+    }
+
+    .column {
+        border: 1px solid var(--border-strong);
+        border-radius: 12px;
+        background-color: var(--bg-base);
+    }
+
+    .cellHeader {
+        height: auto;
+    }
+
+    .cellRow {
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .mobileLabel {
+        display: block;
+    }
+}

@@ -1,0 +1,313 @@
+/* Production of Samuel.M.K also know as T756-Tech */
+.main {
+    min-height: 100vh;
+    background-color: var(--bg-surface);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--bg-surface);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.logoIcon {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--accent-primary), #0044cc);
+    border-radius: 6px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: var(--text-primary);
+}
+
+.loginBtn {
+    color: var(--text-primary);
+}
+
+.article {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+.heroSection {
+    margin-bottom: 80px;
+    max-width: 800px;
+}
+
+.badge {
+    display: inline-block;
+    color: var(--accent-primary);
+    background-color: rgba(8, 102, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 24px 0;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: 64px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Left Column Styling */
+.sectionBlock {
+    margin-bottom: 48px;
+}
+
+.sectionBlock h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 16px 0;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 12px;
+}
+
+.sectionBlock p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.valueList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.valueList li {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.valueList strong {
+    display: block;
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.techTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.techTags span {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid var(--border-light);
+}
+
+/* Right Column Form Styling */
+.formCard {
+    background-color: var(--bg-base);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 40px;
+}
+
+.formCard h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 12px 0;
+}
+
+.formSubtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0 0 32px 0;
+}
+
+.applicationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputGroup label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 1px var(--accent-primary);
+}
+
+.inputGroup select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239CA3AF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 12px auto;
+}
+
+.submitBtn {
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 12px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.successMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 8px;
+}
+
+.successIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #10b981;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.successMessage h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0 0 12px 0;
+}
+
+.successMessage p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0 0 32px 0;
+}
+
+.resetBtn {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.resetBtn:hover {
+    background-color: var(--bg-hover);
+}

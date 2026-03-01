@@ -1,0 +1,101 @@
+/* Production of Samuel.M.K also know as T756-Tech */
+.footer {
+    border-top: 1px solid var(--border-light);
+    background-color: var(--bg-surface);
+    padding: 64px 48px 24px;
+    margin-top: 64px;
+}
+
+.footerContent {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+    margin-bottom: 64px;
+}
+
+.footerBrand {
+    flex: 1;
+    max-width: 300px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.logoIcon {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--accent-primary), #0044cc);
+    border-radius: 6px;
+}
+
+.footerTagline {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.socialIcons a {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    display: flex;
+}
+
+.socialIcons a:hover {
+    color: var(--accent-primary);
+}
+
+.footerLinks {
+    display: flex;
+    gap: 80px;
+}
+
+.linkGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.linkGroup h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.linkGroup a {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.linkGroup a:hover {
+    color: var(--accent-primary);
+}
+
+.footerBottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}

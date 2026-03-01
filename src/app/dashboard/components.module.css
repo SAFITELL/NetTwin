@@ -1,0 +1,186 @@
+/* Production of Samuel.M.K also know as T756-Tech */
+/* Dashboard Layout Styles */
+.layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--bg-surface);
+}
+
+.sidebar {
+    width: 240px;
+    background-color: var(--bg-base);
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logoArea {
+    height: 64px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.logoIcon {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--accent-primary), #a855f7);
+    border-radius: 4px;
+}
+
+.logoText {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+.navGroup {
+    padding: 24px 12px 12px;
+    flex: 1;
+}
+
+.navGroupBottom {
+    padding: 12px;
+    border-top: 1px solid var(--border-light);
+}
+
+.navLabel {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 0 8px;
+    margin-bottom: 8px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.navItem:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.navItem.active {
+    background-color: rgba(99, 102, 241, 0.1);
+    color: var(--accent-primary);
+}
+
+.navIcon {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.active .navIcon {
+    opacity: 1;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    /* Important for flex-child truncation */
+}
+
+/* Header Styles */
+.header {
+    height: 64px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--bg-surface);
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+}
+
+.breadcrumbMuted {
+    color: var(--text-muted);
+}
+
+.breadcrumbSeparator {
+    color: var(--text-muted);
+}
+
+.breadcrumbActive {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.simStatus {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--status-success);
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 4px 12px;
+    border-radius: 100px;
+}
+
+.statusDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--status-success);
+    box-shadow: 0 0 8px var(--status-success);
+}
+
+.userMenu {
+    padding: 0;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--text-muted);
+    color: var(--bg-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Page Content Container */
+.pageContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 32px;
+}

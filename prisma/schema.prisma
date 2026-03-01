@@ -1,0 +1,100 @@
+// Production of Samuel.M.K also know as T756-Tech
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator py {
+  provider = "prisma-client-py"
+  interface = "asyncio"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  users     User[]
+  networks  Network[]
+  apiKeys   ApiKey[]
+}
+
+model User {
+  id             String       @id @default(uuid())
+  email          String       @unique
+  hashedPassword String
+  name           String?
+  role           Role         @default(USER)
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Network {
+  id             String       @id @default(uuid())
+  name           String
+  region         String
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  towers         Tower[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Tower {
+  id        String   @id @default(uuid())
+  networkId String
+  network   Network  @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  name      String
+  lat       Float
+  lng       Float
+  capacity  Float    // Max bandwidth in Mbps
+  status    String   @default("ACTIVE") // ACTIVE, MAINTENANCE, SLEEP
+  isActive  Boolean  @default(true)
+  metadata  Json?    // Any hardware/vendor specific config
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  metrics   NetworkMetrics[]
+}
+
+model NetworkMetrics {
+  id              Int      @id @default(autoincrement())
+  towerId         String
+  tower           Tower    @relation(fields: [towerId], references: [id], onDelete: Cascade)
+  timestamp       DateTime @default(now())
+  utilizationPct  Float
+  latencyMs       Float
+  packetLossPct   Float
+  status          String   // NORMAL, WARNING, CRITICAL
+}
+
+model DecisionLog {
+  id              Int      @id @default(autoincrement())
+  timestamp       DateTime @default(now())
+  actionTaken     String
+  target          String
+  confidence      Float
+}
+
+enum Role {
+  ADMIN
+  ENGINEER
+  VIEWER
+  USER
+}
+
+model ApiKey {
+  id             String       @id @default(uuid())
+  key            String       @unique
+  name           String
+  isActive       Boolean      @default(true)
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}

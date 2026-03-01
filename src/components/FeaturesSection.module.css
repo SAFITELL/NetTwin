@@ -1,0 +1,240 @@
+/* Production of Samuel.M.K also know as T756-Tech */
+.container {
+    max-width: 1200px;
+    margin: 120px auto;
+    padding: 0 48px;
+}
+
+/* Header & Navigation Arrows */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin: 8px 0 0 0;
+    font-weight: 400;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+}
+
+.arrowBtn {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #f0f4ff;
+    /* Light blue matching Stripe */
+    color: #4f46e5;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.arrowBtn:hover:not(:disabled) {
+    background-color: #e0e7ff;
+}
+
+.arrowBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-light);
+}
+
+/* Horizontal Accordion Carousel */
+.carousel {
+    display: flex;
+    gap: 12px;
+    height: 480px;
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    /* Smooth elastic transition mimicking physical cards */
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Inactive State: Narrow sliver */
+    flex: 0 0 60px;
+}
+
+.cardActive {
+    flex: 1;
+    /* Takes up all remaining space */
+    cursor: default;
+}
+
+.cardImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* Keep image centered to avoid sudden jumps during flex resize */
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.card:hover:not(.cardActive) .cardImage {
+    /* Slight zoom on hover for inactive cards */
+    transform: scale(1.05);
+}
+
+.cardGradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.cardActive .cardGradient {
+    opacity: 1;
+}
+
+.cardTitle {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 2;
+    max-width: 80%;
+    line-height: 1.1;
+}
+
+.cardActive .cardTitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+    /* Slide in text slightly after card expands */
+}
+
+/* Descriptive Details Below Carousel (Animated on change) */
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 24px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detailsText {
+    flex: 1;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-right: 64px;
+    margin: 0;
+    max-width: 800px;
+}
+
+.detailsText strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.detailsAction {
+    flex-shrink: 0;
+}
+
+.readBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.readBtn:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-strong);
+}
+
+.readBtn svg {
+    transition: transform 0.2s;
+}
+
+.readBtn:hover svg {
+    transform: translateX(4px);
+}
+
+/* Responsive constraints */
+@media (max-width: 968px) {
+    .container {
+        padding: 0 24px;
+        margin: 80px auto;
+    }
+
+    .carousel {
+        height: 400px;
+    }
+
+    .card {
+        flex: 0 0 40px;
+    }
+
+    .cardTitle {
+        font-size: 1.75rem;
+        left: 24px;
+        bottom: 24px;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .detailsText {
+        padding-right: 0;
+    }
+}
